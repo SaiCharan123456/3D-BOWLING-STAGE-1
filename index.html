@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shooting Game in Virtual Reality</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>   
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+    
+    <script src="./throw.js"></script>
+  </head>
+  <body>
+    <a-scene id="scene" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" device-orientation-permission-ui="">
+
+      <a-a-assets>
+        <a-asset-item id="bowling-ball" src="bowling_ball/scene.gltf"></a-asset-item>
+
+        <a-asset-item id="bowling-pins" src="./bowling_pin/scene.gltf"></a-asset-item>
+      </a-a-assets>
+    <!--Light-->
+     <a-entity light="type: ambient; color: white intensity:0.5"></a-entity>
+
+     <!--Camera and Cursor-->
+     <a-entity id="camera" camera="" position="-0.16364589826965387 1.6 24.507573830413484" wasd-controls="" look-controls="" rotation="-17.074142294898532 -363.48442523099413 0" data-aframe-inspector-original-camera="">
+       <a-entity id="ball" gltf-model="#bowling-ball" position="0 -4.4 3" rotation="0 180 0" scale="0.35 1 1">
+       </a-entity>
+       <a-cursor material="" raycaster="" cursor="" geometry=""></a-cursor>        
+     </a-entity>
+
+     <!--Bowling Balls-->
+     <a-entity
+      id="bowling-ball"
+      gltf-model="#bowling-ball" 
+      bowling-balls>
+    </a-entity>
+
+     <!--Ground-->
+     <a-plane id="ground" position="0 1 0" rotation="-90 0 0" height="50" width="5" color="#ede3e3" static-body="sphereRadius: NaN" visible="" material="" geometry="height: 60" velocity="">
+     </a-plane>
+
+     <!--Borders-->
+     <a-box position="2.46673 1.1275 -0.0076" color="tomato" depth="1" height="1" width="1" material="color: #ff0000" geometry="depth: 1.2; height: 0.3; width: 0.3" scale="1 1.0005 50" id="box"></a-box><a-box position="-2.43326 1.127 0.00698" color="tomato" depth="1" height="1" width="1" material="color: #ff0000" geometry="depth: 1.2; height: 0.3; width: 0.3" scale="1 1 50" id="box"></a-box>
+
+     <!--Pins-->
+     <a-entity scale="2 2 2" position="-30 -2 15">
+      <a-box gltf-model="./bowling_pin/scene.gltf" position="-0.7 1.5 20" color="tomato" depth="0.1" height="1" width="0.2" material="" geometry=""></a-box>
+
+      <a-box gltf-model="./bowling_pin/scene.gltf" position="-0.1 1.5 20" color="tomato" depth="0.1" height="1" width="0.2" material="" geometry=""></a-box>
+     
+      <a-box gltf-model="./bowling_pin/scene.gltf" position="0.6 1.5 20" color="tomato" depth="0.1" height="1" width="0.2" material="" geometry=""></a-box>
+
+      <a-box gltf-model="./bowling_pin/scene.gltf" position="1.3 1.5 20" color="tomato" depth="0.1" height="1" width="0.2" material="" geometry=""></a-box>
+
+      <a-box gltf-model="./bowling_pin/scene.gltf" position="-0.35 1.5 20.5" color="tomato" depth="0.1" height="0.9" width="0.2" material="" geometry=""></a-box>
+
+      <a-box gltf-model="./bowling_pin/scene.gltf" position="0.25 1.5 20.5" color="tomato" depth="0.1" height="0.9" width="0.2" material="" geometry=""></a-box>
+      
+      <a-box gltf-model="./bowling_pin/scene.gltf" position="0.9 1.5 20.5" color="tomato" depth="0.1" height="0.9" width="0.2" material="" geometry=""></a-box>
+
+      <a-box gltf-model="./bowling_pin/scene.gltf" position="-0.1 1.5 21" color="tomato" depth="0.1" height="0.7" width="0.2" material="" geometry=""></a-box>
+     
+      <a-box gltf-model="./bowling_pin/scene.gltf" position="0.6 1.5 21" color="tomato" depth="0.1" height="0.7" width="0.2" material="" geometry=""></a-box>
+
+      <a-box gltf-model="./bowling_pin/scene.gltf" position="0.25 1.5 21.5" color="tomato" depth="0.1" height="0.5" width="0.1" material="" geometry=""></a-box>
+  </a-entity>
+  </body>
+</html>
+
+
+     
+
+     
+
+     
+
+     
+
+     
+   
